@@ -1,0 +1,22 @@
+<h1>Add a new aniaml</h1>
+<%= form_for @animal,:url => { :action => "create" } do |f| %>
+<% if @animal.errors.any? %>
+<h2>Errors:</h2>
+<ul>
+	<% @animal.errors.full_messages.each do |message| %>
+	<li><%= message %></li>
+<% end %>
+</ul>
+<% end %>
+<p><%= f.label :name %>
+<%= f.text_field :name %>
+</p>
+<p><%= f.label :photo %>
+<%= f.file_field :photo %>
+</p>
+<p><%= f.label :age %>
+<%= f.text_field :age %>
+</p>
+<p><%= f.submit "Add animal to list" %></p>
+<% end %>
+<a href="/">main menu</a>
